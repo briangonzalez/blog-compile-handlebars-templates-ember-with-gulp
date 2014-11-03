@@ -7,7 +7,7 @@ var wrap        = require('gulp-wrap');
 var tap         = require('gulp-tap');
 var compiler    = require('ember-template-compiler');
 
-var templateDir = 'templates';
+var TEMPLATE_DIR = 'templates';
 
 gulp.task('compile-handlebars', function(){
 
@@ -31,7 +31,7 @@ gulp.task('compile-handlebars', function(){
       namespace: 'Ember.TEMPLATES',
       root: 'window',
       processName: function(filePath) {
-        var id = filePath.split(templateDir + '/')[1].replace('.hbs', '');
+        var id = filePath.split(TEMPLATE_DIR + '/')[1].replace('.hbs', '');
         return id;
       }
     }))
